@@ -42,7 +42,11 @@ export function TaskList() {
     // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
     const updateTask = tasks.filter((task) => {
       if (task.id === id) {
-        task.isComplete = true;
+        if (task.isComplete === false) {
+          task.isComplete = true;
+        } else {
+          task.isComplete = false;
+        }
       }
       return task;
     });
